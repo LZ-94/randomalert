@@ -1,0 +1,213 @@
+/* === MODO CLARO === */
+:root {
+    --bg-color: #f7f0e1; /* Crema suave */
+    --form-bg: #fff8e1; /* Color pastel cálido */
+    --text-color: #333;  /* Gris oscuro */
+    --highlight: #ff7043; /* Naranja suave */
+    --accent: #fbc02d; /* Amarillo cálido */
+    --success: #66bb6a; /* Verde pastel */
+    --warning: #ef5350; /* Rojo suave */
+    --border: #e0e0e0;  /* Gris claro */
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* === MODO OSCURO === */
+[data-theme="dark"] {
+    --bg-color: #121212; /* Fondo oscuro */
+    --form-bg: #1f1f1f; /* Gris oscuro para el formulario */
+    --text-color: #e0e0e0;  /* Gris claro para texto */
+    --highlight: #ff7043; /* Naranja cálido */
+    --accent: #fbc02d; /* Amarillo cálido */
+    --success: #66bb6a; /* Verde pastel */
+    --warning: #ef5350; /* Rojo suave */
+    --border: #333;  /* Gris oscuro */
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* === ESTILO GENERAL === */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 1.5rem;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+/* === CÓDIGO DE GRID PARA EL FORMULARIO Y LA CONFIGURACIÓN === */
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Por defecto, una sola columna */
+    gap: 2rem; /* Espacio entre las columnas */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cuando la pantalla es más ancha, muestra dos columnas */
+@media (min-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    }
+}
+
+/* === FORMULARIO === */
+form {
+    background-color: var(--form-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px var(--shadow);
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+/* === LABEL === */
+label {
+    display: block;
+    margin-top: 0.6rem;
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: var(--highlight);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.2rem;
+}
+
+/* === ENTRADAS === */
+input[type="range"],
+input[type="number"],
+select {
+    width: 100%;
+    margin: 0.6rem 0;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background-color: #fff;
+    padding: 0.5rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+input[type="range"] {
+    accent-color: var(--highlight);
+}
+
+/* === BOTONES === */
+button {
+    margin-top: 1rem;
+    padding: 0.6rem 1.1rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: var(--accent);
+    color: #fff;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: var(--highlight);
+}
+
+#guardar-config {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+#detener-avisos {
+    background-color: var(--warning);
+    color: #fff;
+}
+
+#iniciar-avisos {
+    background-color: var(--success);
+    color: #fff;
+}
+
+#probar-sonido {
+    background-color: var(--highlight);
+    color: #fff;
+}
+
+/* === CONFIGURACIÓN GUARDADA === */
+#configuracion-guardada {
+    background-color: var(--form-bg);
+    border: 1px solid var(--border);
+    padding: 1rem;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 1.5rem;
+}
+
+h3 {
+    text-align: center;
+    color: var(--highlight);
+    margin-top: 2rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* === AVISO VISUAL CON ANIMACIÓN === */
+.aviso-visual {
+    background: var(--highlight);
+    padding: 0.8rem 1.5rem;
+    margin: 1rem auto;
+    color: #fff;
+    font-size: 1.3rem;
+    text-align: center;
+    border: 2px solid var(--highlight);
+    border-radius: 12px;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: aparecer 0.6s ease-out, parpadeo 1s infinite alternate;
+}
+/* Footer */
+footer {
+    font-family: Arial, sans-serif; 
+    font-style:normal;
+    font-size: 14px;
+    text-align: justify; 
+    padding: 30px;
+    color: #b5b5b5;
+  }
+  footer a {
+    color: #e3a200;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+.kofilink {
+    color: #fbc02d;
+
+}
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes parpadeo {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
